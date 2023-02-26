@@ -39,7 +39,7 @@ const HeaderComponent = () => {
                                 <Dropdown.Item >Senzori,releuri,unitati control</Dropdown.Item>
                                 <Dropdown.Item >Incalzire</Dropdown.Item>
                                 <Dropdown.Item >Uleiuri si lichide</Dropdown.Item>
-                                <Dropdown.Item >Grnituri si inele de etansare</Dropdown.Item>
+                                <Dropdown.Item >Garnituri si inele de etansare</Dropdown.Item>
                                 <Dropdown.Item >Cutie de viteze</Dropdown.Item>
                                 <Dropdown.Item >Racorduri si furtunuri</Dropdown.Item>
                                 <Dropdown.Item >Set reparatie</Dropdown.Item>
