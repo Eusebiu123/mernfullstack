@@ -65,13 +65,13 @@ const ProductCarouselComponent = () => {
           <p>Descriere</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      {/* <Carousel.Item>
         <img
           crossorigin="anonymous"
           className="d-block w-100"
 
           style={{heigh:"300px", objectFit: "cover"}}
-          src="/images/carousel/bujii.jpg"
+          src="/images/carousel/bujii.png"
           alt="First slide"
         />
         <Carousel.Caption>
@@ -81,7 +81,7 @@ const ProductCarouselComponent = () => {
           </LinkContainer>
           <p>Descriere</p>
         </Carousel.Caption>
-      </Carousel.Item>
+      </Carousel.Item> */}
       <Carousel.Item>
         <img
           crossorigin="anonymous"
@@ -116,7 +116,7 @@ const ProductCarouselComponent = () => {
           <p>Descriere</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      {/* <Carousel.Item>
         <img
          crossorigin="anonymous"
          className="d-block w-100"
@@ -132,8 +132,8 @@ const ProductCarouselComponent = () => {
           </LinkContainer>
           <p>Descriere</p>
         </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
+      </Carousel.Item> */}
+      {/* <Carousel.Item>
         <img
          crossorigin="anonymous"
          className="d-block w-100"
@@ -149,7 +149,7 @@ const ProductCarouselComponent = () => {
           </LinkContainer>
           <p>Descriere</p>
         </Carousel.Caption>
-      </Carousel.Item>
+      </Carousel.Item> */}
       <Carousel.Item>
         <img
          crossorigin="anonymous"
@@ -218,7 +218,7 @@ const ProductCarouselComponent = () => {
           <p>Descriere</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      {/* <Carousel.Item>
         <img
           crossorigin="anonymous"
           className="d-block w-100"
@@ -234,8 +234,8 @@ const ProductCarouselComponent = () => {
           </LinkContainer>
           <p>Descriere</p>
         </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
+      </Carousel.Item> */}
+      {/* <Carousel.Item>
         <img
         crossorigin="anonymous"
         className="d-block w-100"
@@ -251,8 +251,8 @@ const ProductCarouselComponent = () => {
           </LinkContainer>
           <p>Descriere</p>
         </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
+      </Carousel.Item> */}
+      {/* <Carousel.Item>
         <img
           crossorigin="anonymous"
           className="d-block w-100"
@@ -268,8 +268,8 @@ const ProductCarouselComponent = () => {
           </LinkContainer>
           <p>Descriere</p>
         </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
+      </Carousel.Item> */}
+      {/* <Carousel.Item>
         <img
           crossorigin="anonymous"
           className="d-block w-100"
@@ -285,8 +285,8 @@ const ProductCarouselComponent = () => {
           </LinkContainer>
           <p>Descriere</p>
         </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
+      </Carousel.Item> */}
+      {/* <Carousel.Item>
         <img
          crossorigin="anonymous"
          className="d-block w-100"
@@ -301,8 +301,8 @@ const ProductCarouselComponent = () => {
 
           </LinkContainer>
           <p>Descriere</p>
-        </Carousel.Caption>
-      </Carousel.Item>
+        </Carousel.Caption> */}
+      {/* </Carousel.Item> */}
       <Carousel.Item>
         <img
          crossorigin="anonymous"
@@ -320,7 +320,7 @@ const ProductCarouselComponent = () => {
           <p>Descriere</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      {/* <Carousel.Item>
         <img
           crossorigin="anonymous"
           className="d-block w-100"
@@ -336,7 +336,7 @@ const ProductCarouselComponent = () => {
           </LinkContainer>
           <p>Descriere</p>
         </Carousel.Caption>
-      </Carousel.Item>
+      </Carousel.Item> */}
       <Carousel.Item>
         <img
          crossorigin="anonymous"
@@ -371,7 +371,7 @@ const ProductCarouselComponent = () => {
           <p>Descriere</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      {/* <Carousel.Item>
         <img
          crossorigin="anonymous"
          className="d-block w-100"
@@ -387,8 +387,8 @@ const ProductCarouselComponent = () => {
           </LinkContainer>
           <p>Descriere</p>
         </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
+      </Carousel.Item> */}
+      {/* <Carousel.Item>
         <img
           crossorigin="anonymous"
           className="d-block w-100"
@@ -404,8 +404,8 @@ const ProductCarouselComponent = () => {
           </LinkContainer>
           <p>Descriere</p>
         </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
+      </Carousel.Item> */}
+      {/* <Carousel.Item>
         <img
           crossorigin="anonymous"
           className="d-block w-100"
@@ -421,7 +421,7 @@ const ProductCarouselComponent = () => {
           </LinkContainer>
           <p>Descriere</p>
         </Carousel.Caption>
-      </Carousel.Item>
+      </Carousel.Item> */}
       <Carousel.Item>
         <img
          crossorigin="anonymous"
@@ -439,7 +439,7 @@ const ProductCarouselComponent = () => {
           <p>Descriere</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      {/* <Carousel.Item>
         <img
          crossorigin="anonymous"
          className="d-block w-100"
@@ -455,7 +455,7 @@ const ProductCarouselComponent = () => {
           </LinkContainer>
           <p>Descriere</p>
         </Carousel.Caption>
-      </Carousel.Item>
+      </Carousel.Item> */}
       <Carousel.Item>
         <img
           crossorigin="anonymous"
@@ -473,7 +473,7 @@ const ProductCarouselComponent = () => {
           <p>Descriere</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      {/* <Carousel.Item>
         <img
          crossorigin="anonymous"
          className="d-block w-100"
@@ -489,7 +489,7 @@ const ProductCarouselComponent = () => {
           </LinkContainer>
           <p>Descriere</p>
         </Carousel.Caption>
-      </Carousel.Item>
+      </Carousel.Item> */}
 
     </Carousel>
   );

@@ -6,7 +6,7 @@ const CartItemComponent = () => {
       <ListGroup.Item>
         <Row>
           <Col md={2}>
-            <Image crossOrigin="anonymous" src="/images/games-category.png" fluid />
+            <Image crossOrigin="anonymous" src="/images/poza1.png" fluid />
           </Col>
           <Col md={2}>
             Logotech series <br />

@@ -174,11 +174,11 @@ const AdminEditProductPage = () => {
               <Form.Label>Images</Form.Label>
                 <Row>
                     <Col style={{position: "relative"}} xs={3}>
-                    <Image src="/images/monitors-category.png" fluid />
+                    <Image src="/images/poza1.png" fluid />
                     <i style={onHover} className="bi bi-x text-danger"></i>
                     </Col>
                     <Col style={{position: "relative"}} xs={3}>
-                    <Image src="/images/monitors-category.png" fluid />
+                    <Image src="/images/poza2.png" fluid />
                     <i style={onHover} className="bi bi-x text-danger"></i>
                     </Col>
                     

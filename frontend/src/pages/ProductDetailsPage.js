@@ -38,20 +38,20 @@ const ProductDetailsPage = () => {
             <Image
               crossOrigin="anonymous"
               fluid
-              src="/images/games-category.png"
+              src="/images/poza1.png"
             />
           </div>
           <br />
           <div id="second">
-            <Image fluid src="/images/monitors-category.png" />
+            <Image fluid src="/images/poza2.png" />
           </div>
           <br />
           <div id="third">
-            <Image fluid src="/images/tablets-category.png" />
+            <Image fluid src="/images/poza3.png" />
           </div>
           <br />
           <div id="fourth">
-            <Image fluid src="/images/games-category.png" />
+            <Image fluid src="/images/poza1.png" />
           </div>
           <br />
         </Col>
