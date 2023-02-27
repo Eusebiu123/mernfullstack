@@ -26,6 +26,10 @@ const categories = [
     description:
       "Motor/Radiator/Piese - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
     image: "/images/poza1.png",
+    attrs: [
+      { key: "marca", value: ["bmw", "audi", "opel"] },
+      { key: "model", value: ["I8", "Agila", "X6", "A6"] },
+    ],
   },
   {
     name: "Filtre",
