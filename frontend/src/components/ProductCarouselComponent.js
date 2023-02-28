@@ -12,7 +12,7 @@ const ProductCarouselComponent = () => {
     <Carousel>
       <Carousel.Item>
         <img
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
           className="d-block w-100"
 
           style={{heigh:"300px", objectFit: "cover"}}
