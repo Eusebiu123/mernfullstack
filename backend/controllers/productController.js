@@ -1,5 +1,6 @@
 const Product = require("../models/ProductModel");
 const recordsPerPage = require("../config/pagination");
+const imageValidate = require("../utils/imageValidate")
 
 const getProducts = async (req, res, next) => {
   try {
@@ -212,11 +213,38 @@ const adminUpload = async (req, res, next) => {
         if(!req.files || !! req.files.images === false) {
             return res.status(400).send("No files were uploaded.")
         }
-        if (Array.isArray(req.files.images)) {
-            res.send("You sent " + req.files.images.length + " images")
-        } else {
-            res.send("You sent only one image")
+
+        const validateResult = imageValidate(req.files.images)
+        if(validateResult.error) {
+            return res.status(400).send(validateResult.error)
         }
+
+        const path = require("path")
+        const { v4: uuidv4 } = require("uuid")
+        const uploadDirectory = path.resolve(__dirname, "../../frontend", "public", "images", "products")
+
+        let product = await Product.findById(req.query.productId).orFail()
+
+        let imagesTable = []
+        if (Array.isArray(req.files.images)) {
+            imagesTable = req.files.images
+        } else {
+            imagesTable.push(req.files.images)
+        }
+
+        for(let image of imagesTable) {
+            var fileName = uuidv4() + path.extname(image.name)
+            var uploadPath = uploadDirectory + "/" + fileName
+            product.images.push({ path: "/images/products/" + fileName})
+            image.mv(uploadPath, function(err) {
+                if(err) {
+                    return res.status(500).send(err)
+                }
+            })
+        }
+        await product.save()
+        return res.send("Files uploaded!")
+
     } catch(err) {
         next(err)
     }
