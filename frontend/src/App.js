@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+// components:
 import HeaderComponent from "./components/HeaderComponent";
 import FooterComponent from "./components/FooterComponent";
 
+//user components:
 import RoutesWithUserChatComponent from "./components/user/RoutesWithUserChatComponent";
 
 // publicly available pages:
@@ -31,21 +33,18 @@ import AdminOrdersPage from "./pages/admin/AdminOrdersPage";
 import AdminOrderDetailsPage from "./pages/admin/AdminOrderDetailsPage";
 import AdminChatsPage from "./pages/admin/AdminChatsPage";
 import AdminAnalyticsPage from "./pages/admin/AdminAnalyticsPage";
-
 import ScrollToTop from "./utils/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
+    <ScrollToTop />
       <HeaderComponent />
       <Routes>
-
         <Route element={<RoutesWithUserChatComponent />}>
           {/* publicly available routes: */}
           <Route path="/" element={<HomePage />} />
           <Route path="/product-list" element={<ProductListPage />} />
-          <Route path="/product-details" element={<ProductDetailsPage />} />
           <Route path="/product-details/:id" element={<ProductDetailsPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/login" element={<LoginPage />} />
@@ -64,8 +63,6 @@ function App() {
             element={<UserOrderDetailsPage />}
           />
         </Route>
-
-
 
         {/* admin protected routes: */}
         <Route element={<ProtectedRoutesComponent admin={true} />}>
