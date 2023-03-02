@@ -26,6 +26,10 @@ const EditProductPageComponent = ({
   categories,
   fetchProduct,
   updateProductApiRequest,
+  reduxDispatch,
+  saveAttributeToCatDoc,
+  imageDeleteHandler,
+  uploadHandler
 }) => {
   const [validated, setValidated] = useState(false);
   const [product, setProduct] = useState({});
@@ -38,9 +42,14 @@ const EditProductPageComponent = ({
   const [categoryChoosen, setCategoryChoosen] = useState("Choose category");
   const [newAttrKey, setNewAttrKey] = useState(false);
   const [newAttrValue, setNewAttrValue] = useState(false);
+  const [imageRemoved, setImageRemoved] = useState(false)
+  const [isUploading, setIsUploading] = useState("");
+  const [imageUploaded, setImageUploaded] = useState(false);
 
   const attrVal = useRef(null);
   const attrKey = useRef(null);
+  const createNewAttrKey = useRef(null);
+  const createNewAttrVal = useRef(null);
 
   const setValuesForAttrFromDbSelectForm = (e) => {
     if (e.target.value !== "Choose attribute") {
@@ -69,7 +78,7 @@ const EditProductPageComponent = ({
     fetchProduct(id)
       .then((product) => setProduct(product))
       .catch((er) => console.log(er));
-  }, [id]);
+  }, [id, imageRemoved, imageUploaded]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -187,7 +196,13 @@ const EditProductPageComponent = ({
   const addNewAttributeManually = (e) => {
       if (e.keyCode && e.keyCode === 13) {
           if (newAttrKey && newAttrValue) {
-             console.log("add new attribute");
+              reduxDispatch(saveAttributeToCatDoc(newAttrKey, newAttrValue, categoryChoosen));
+             setAttributesTableWrapper(newAttrKey, newAttrValue);
+             e.target.value = "";
+             createNewAttrKey.current.value = "";
+             createNewAttrVal.current.value = "";
+             setNewAttrKey(false);
+             setNewAttrValue(false);
           }
       }
   }
@@ -336,11 +351,13 @@ const EditProductPageComponent = ({
                 <Form.Group className="mb-3" controlId="formBasicNewAttribute">
                   <Form.Label>Create new attribute</Form.Label>
                   <Form.Control
+                  ref={createNewAttrKey}
                     disabled={categoryChoosen === "Choose category"}
                     placeholder="first choose or create category"
                     name="newAttrKey"
                     type="text"
                     onKeyUp={newAttrKeyHandler}
+                    required={newAttrValue}
                   />
                 </Form.Group>
               </Col>
@@ -351,9 +368,10 @@ const EditProductPageComponent = ({
                 >
                   <Form.Label>Attribute value</Form.Label>
                   <Form.Control
+                  ref={createNewAttrVal}
                     disabled={categoryChoosen === "Choose category"}
                     placeholder="first choose or create category"
-                    required={true}
+                    required={newAttrKey}
                     name="newAttrValue"
                     type="text"
                     onKeyUp={newAttrValueHandler}
@@ -362,7 +380,7 @@ const EditProductPageComponent = ({
               </Col>
             </Row>
 
-            <Alert variant="primary">
+            <Alert show={newAttrKey && newAttrValue} variant="primary">
               After typing attribute key and value press enterr on one of the
               field
             </Alert>
@@ -378,11 +396,20 @@ const EditProductPageComponent = ({
                         src={image.path ?? null}
                         fluid
                       />
-                      <i style={onHover} className="bi bi-x text-danger"></i>
+                      <i style={onHover} onClick={() => imageDeleteHandler(image.path, id).then(data => setImageRemoved(!imageRemoved))} className="bi bi-x text-danger"></i>
                     </Col>
                   ))}
               </Row>
-              <Form.Control required type="file" multiple />
+              <Form.Control type="file" multiple onChange={e => {
+                 setIsUploading("upload files in progress ..."); 
+                 uploadHandler(e.target.files, id)
+                 .then(data => {
+                    setIsUploading("upload file completed"); 
+                    setImageUploaded(!imageUploaded);
+                 })
+                 .catch((er) => setIsUploading(er.response.data.message ? er.response.data.message : er.response.data));
+              }} />
+               {isUploading}
             </Form.Group>
             <Button variant="primary" type="submit">
               UPDATE
